@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="rDiv"></div>
+열갯수 : <input type="text" id="rCnt"><br>
+행갯수 : <input type="text" id="cCnt"><br>
+<button type="button"onclick="makeTa()">테이블 생성</button>
+<script type="text/javascript">	
+	function makeHtml(){
+		var rCnt = document.querySelector('#rCnt');
+		var cCnt = document.querySelector('#cCnt');
+		rCnt = parseInt(rCnt.value);
+		cCnt = parseInt(cCnt.value);
+		var str='<table border="1">';
+		for(var i=1;i<=rCnt;i++){
+			str +='<tr>';
+			for(var j=1; j<=cCnt;j++){
+				str +='<td>'+((i-1)*cCnt+j)+'</td>';
+			}
+			str +='</tr>';
+		}
+		str +='<table>';
+		rDiv.innerHTML=str;
+	}
+	</script>
+</body>
+</html>

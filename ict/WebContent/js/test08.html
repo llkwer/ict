@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/js/test08.jsp">
+	ID : <input type="text" id='id' name="id"><br>
+	PWD : <input type="password" id='pwd' name="pwd"><br>
+	<button type="button"onclick="checkValue()">로그인</button>
+</form>
+<script>
+	function checkValue(){
+		var idObj = document.querySelector('#id');
+		var pwdObj = document.querySelector('#pwd');
+		console.log(1)
+		if(idObj.value.trim().length<4){
+			alert("id는 4글자 이상입니다.");
+			idObj.value="";
+			idObj.focus();
+			return false;
+		}
+		if(pwdObj.value.trim().length<5){
+			alert("pwd는 4글자 이상입니다.");
+			pwdObj.value="";
+			pwdObj.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+</body>
+</html>
